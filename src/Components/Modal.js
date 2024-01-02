@@ -46,12 +46,12 @@ function Modall({ open, handleClose, user  ,show }) {
       email:email,
       phone:phone
     }
-    axios.post("https://backend-1rxt.onrender.com/user/addUser",values, { withCredentials: true }).then((res)=>{
+    axios.post("/user/addUser",values, { withCredentials: true }).then((res)=>{
       handleClose()
       show("Your request sent successfully", "success")
     }).catch((err)=>{
       console.log(err)
-      show(err.response.data.message, "error")
+      show(err?.response?.data?.message, "error")
     })
   }
 
