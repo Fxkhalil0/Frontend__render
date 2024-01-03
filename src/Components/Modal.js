@@ -75,10 +75,10 @@ function Modall({ open, handleClose, user, show }) {
           <h3>{user ? "Try With Us" : "Join Our Team"}</h3>
           <Button onClick={handleClose}>Close</Button>
         </div>
-        <p>
-          By submitting this form, your will join our waitlist to get early
-          access to LIVE VIRTUAL WORLD
-        </p>
+        {user ?
+          <p>By submitting this form, your will join our waitlist to get early
+            access to LIVE VIRTUAL WORLD</p> : <p>Lorem Lorem Lorem</p>
+        }
         <h4>Required *</h4>
         <form style={{ marginTop: "60px" }}>
           <Grid container spacing={2}>
@@ -102,7 +102,6 @@ function Modall({ open, handleClose, user, show }) {
                           CameraOperator
                         </MenuItem>
                         <MenuItem value={"tourGuide"}>TourGuide</MenuItem>
-                        <MenuItem value={"director"}>director</MenuItem>
                       </Select>
                     </FormControl>
                   </Box>
