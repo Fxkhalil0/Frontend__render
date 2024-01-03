@@ -46,7 +46,7 @@ function Modall({ open, handleClose, user  ,show }) {
       email:email,
       phone:phone
     }
-    axios.post("/api/user/addUser",values, { withCredentials: true }).then((res)=>{
+    axios.post("https://backend-1rxt.onrender.com/user/addUser",values, { withCredentials: true }).then((res)=>{
       handleClose()
       show("Your request sent successfully", "success")
     }).catch((err)=>{
