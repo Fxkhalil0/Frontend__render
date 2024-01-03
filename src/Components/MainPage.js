@@ -35,7 +35,7 @@ function MainPage() {
                 setUser(false);
               }}
             >
-              Join Our Team
+              Join Us Now
             </button>
           </nav>
           <div className="page__body">

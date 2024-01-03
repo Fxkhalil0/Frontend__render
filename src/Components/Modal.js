@@ -29,7 +29,7 @@ const style = {
 function Modall({ open, handleClose, user, show }) {
   useEffect(() => { }, [open]);
 
-  const [role, setRole] = React.useState(0);
+  const [role, setRole] = useState(0);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
