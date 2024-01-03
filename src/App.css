@@ -406,8 +406,10 @@ footer>.footer__icons>i {
   }
 
   .right__side {
+    width: 50%;
+    position: relative;
     top: 0;
-    left: 85px;
+    left: -9%;
   }
 
   .right__side>img {
@@ -415,7 +417,7 @@ footer>.footer__icons>i {
   }
 
   .box__shadow>img {
-    top: 491px;
+    top: 525px;
     left: 3px;
     width: 45%;
   }
@@ -456,7 +458,7 @@ footer>.footer__icons>i {
   }
 
   .box__shadow>img {
-    top: 438px;
+    top: 505px;
     left: -27px;
     width: 68%;
   }
@@ -470,7 +472,11 @@ footer>.footer__icons>i {
   }
 
   .right__side>img {
-    width: 151%;
+    width: 170%;
+  }
+
+  .right__side {
+    left: -17%;
   }
 
   .right__side .paths img {
@@ -498,6 +504,8 @@ footer>.footer__icons>i {
 @media screen and (max-width: 500px) {
   .right__side {
     width: 70%;
+    top: 15px;
+    left: -4%;
   }
 
   .right__side>img {
@@ -564,7 +572,7 @@ footer>.footer__icons>i {
   }
 
   .box__shadow img {
-    top: 344px;
+    top: 380px;
     left: 70px;
   }
 
@@ -586,36 +594,48 @@ footer>.footer__icons>i {
   }
 
   .right__side>img {
-    width: 98%;
+    width: 120%;
+  }
+
+  .right__side {
+    left: -5%;
   }
 }
 
 @media screen and (max-width: 376px) {
   .box__shadow img {
-    top: 320px;
+    top: 423px;
   }
 
   .right__side .paths {
     top: 18px;
   }
+
+  .right__side>img {
+    width: 145%;
+  }
+
+  .right__side {
+    left: -15%;
+  }
 }
 
 @media screen and (max-width: 351px) {
-  .box__shadow img {
-    top: 328px;
-  }
-
   .right__side .paths {
     top: 10px;
   }
+  .box__shadow img {
+    top: 405px;
+    left: 60px;
+}
 }
 
 @media screen and (max-width: 300px) {
   .box__shadow img {
-    top: 285px;
+    top: 387px;
     width: 90%;
-    left: 25px;
-  }
+    left: 20px;
+}
 
   nav::after {
     width: 133%;
@@ -646,12 +666,18 @@ footer>.footer__icons>i {
     top: 69px;
   }
 
+  .right__side>img {
+    width: 160%;
+}
+
   .right__side {
     margin-top: 15px;
+      left: -18%;
   }
+
   .responsive__div {
     margin-left: -10px;
-}
+  }
 
   footer {
     width: 106%;

@@ -59,7 +59,7 @@ function MainPage() {
             </div>
             <div className="right__side">
               <img src={Global} alt="" />
-              <div className="paths">
+              {/* <div className="paths">
                 <img src={path1} alt="" />
       
                 <div className="sec__path">
@@ -68,7 +68,7 @@ function MainPage() {
                 <div className="last__path">
                 <img src={path3} alt="" />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
