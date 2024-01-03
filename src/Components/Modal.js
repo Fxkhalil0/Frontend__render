@@ -16,18 +16,18 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 800,
   maxWidth: "80vw",
-  overflowX:"hidden",
+  overflowX: "hidden",
   bgcolor: "#16243A",
   overflowY: "auto",
-  maxHeight:"90vh",
+  maxHeight: "90vh",
   border: "none",
   boxShadow: 24,
   p: 4,
   borderRadius: '20px',
 };
 
-function Modall({ open, handleClose, user  ,show }) {
-  useEffect(() => {}, [open]);
+function Modall({ open, handleClose, user, show }) {
+  useEffect(() => { }, [open]);
 
   const [role, setRole] = React.useState(0);
   const [firstName, setFirstName] = useState("");
@@ -38,18 +38,18 @@ function Modall({ open, handleClose, user  ,show }) {
   const handleChange = (event) => {
     setRole(event.target.value);
   };
-  const submit = ()=>{
-    let values ={
-      role:role?role:"user",
-      firstName:firstName,
-      lastName:lastName,
-      email:email,
-      phone:phone
+  const submit = async () => {
+    let values = {
+      role: role ? role : "user",
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone
     }
-    axios.post("https://backend-1rxt.onrender.com/user/addUser",values, { withCredentials: true }).then((res)=>{
+    await axios.post("https://backend-1rxt.onrender.com/addnew", values, { withCredentials: true }).then((res) => {
       handleClose()
       show("Your request sent successfully", "success")
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err)
       show(err?.response?.data?.message, "error")
     })
@@ -59,13 +59,14 @@ function Modall({ open, handleClose, user  ,show }) {
     <Modal
       className="modal"
       open={open}
-      onClose={()=>{handleClose()
-      setEmail("")
-      setFirstName("")
-      setLastName("")
-      setPhone("")
-      setRole(0)
-    }}
+      onClose={() => {
+        handleClose()
+        setEmail("")
+        setFirstName("")
+        setLastName("")
+        setPhone("")
+        setRole(0)
+      }}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
@@ -75,7 +76,7 @@ function Modall({ open, handleClose, user  ,show }) {
           <Button onClick={handleClose}>Close</Button>
         </div>
         <p>
-          By submitting this form, your firm will join our waitlist to get early
+          By submitting this form, your will join our waitlist to get early
           access to LIVE VIRTUAL WORLD
         </p>
         <h4>Required *</h4>
@@ -85,13 +86,13 @@ function Modall({ open, handleClose, user  ,show }) {
               <>
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
                   <label>Role</label>
-                  <Box sx={{ backgroundColor: "#021022", width: "95%" , borderRadius: "10px"}}>
+                  <Box sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}>
                     <FormControl fullWidth>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         value={role}
-                        style={{ color: "white"}}
+                        style={{ color: "white" }}
                         onChange={handleChange}
                       >
                         <MenuItem disabled value={0}>
@@ -113,17 +114,17 @@ function Modall({ open, handleClose, user  ,show }) {
               <label>First Name</label>
               <TextField
                 onChange={(e) => setFirstName(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%" , borderRadius: "10px"}}
+                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
                 id="outlined-basic"
                 variant="outlined"
-                InputProps={{ style: { color: "white"} }}
+                InputProps={{ style: { color: "white" } }}
               />
             </Grid>
             <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
               <label>Last Name</label>
               <TextField
                 onChange={(e) => setLastName(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%" , borderRadius: "10px" }}
+                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
@@ -133,7 +134,7 @@ function Modall({ open, handleClose, user  ,show }) {
               <label>Email</label>
               <TextField
                 onChange={(e) => setEmail(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%" , borderRadius: "10px" }}
+                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
@@ -143,15 +144,15 @@ function Modall({ open, handleClose, user  ,show }) {
               <label>Phone</label>
               <TextField
                 onChange={(e) => setPhone(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%" , borderRadius: "10px" }}
+                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
               />
             </Grid>
             <Button
-            style={{borderRadius: "10px"}}
-            onClick={submit}>submit</Button>
+              style={{ borderRadius: "10px" }}
+              onClick={submit}>submit</Button>
           </Grid>
         </form>
       </Box>

@@ -61,6 +61,7 @@ function MainPage() {
               <img src={Global} alt="" />
               <div className="paths">
                 <img src={path1} alt="" />
+      
                 <div className="sec__path">
                 <img src={path2} alt="" />
                 </div>
