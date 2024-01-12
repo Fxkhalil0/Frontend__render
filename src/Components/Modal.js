@@ -8,6 +8,10 @@ import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 
 const style = {
   position: "absolute",
@@ -23,17 +27,18 @@ const style = {
   border: "none",
   boxShadow: 24,
   p: 4,
-  borderRadius: '20px',
+  borderRadius: "20px",
 };
 
 function Modall({ open, handleClose, user, show }) {
-  useEffect(() => { }, [open]);
+  useEffect(() => {}, [open]);
 
   const [role, setRole] = useState(0);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [birthDate , setBirthDate] = useState("")
 
   const handleChange = (event) => {
     setRole(event.target.value);
@@ -45,17 +50,23 @@ function Modall({ open, handleClose, user, show }) {
       lastName: lastName,
       email: email,
       phone: phone
-    }
-    await axios.post("https://backend-1rxt.onrender.com/addnew", values, { withCredentials: true }).then((res) => {
-      handleClose()
-      show("Your request sent successfully", "success")
-    }).catch((err) => {
-      console.log(err)
-      show(err?.response?.data?.message, "error")
-    })
-  }
+    };
+    console.log(values)
+    await axios
+      .post("https://backend-1rxt.onrender.com/addnew", values, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        handleClose();
+        show("Your request sent successfully", "success");
+      })
+      .catch((err) => {
+        console.log(err);
+        show(err?.response?.data?.message, "error");
+      });
+  };
   const handleEmailClick = () => {
-    window.location.href = 'mailto:Info@lvw.live';
+    window.location.href = "mailto:Info@lvw.live";
   };
 
   return (
@@ -63,12 +74,12 @@ function Modall({ open, handleClose, user, show }) {
       className="modal"
       open={open}
       onClose={() => {
-        handleClose()
-        setEmail("")
-        setFirstName("")
-        setLastName("")
-        setPhone("")
-        setRole(0)
+        handleClose();
+        setEmail("");
+        setFirstName("");
+        setLastName("");
+        setPhone("");
+        setRole(0);
       }}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
@@ -78,16 +89,33 @@ function Modall({ open, handleClose, user, show }) {
           <h3>{user ? "Try With Us" : "Join Our Team"}</h3>
           <Button onClick={handleClose}>Close</Button>
         </div>
-        {user ?
-          <p>Be among the first to experience the future of live virtual exploration. Sign up for early access to LVW and start your journey of boundless exploration.</p> 
-          : <p>Join our passionate team and shape the future of live virtual exploration. We value diverse perspectives and are always looking for talented individuals to join our innovative journey.
-            Fill out the form below or send us your CV at
-            <span style={{ textDecoration: 'underline', cursor: 'pointer', color: 'blue', fontWeight: 800 }} onClick={handleEmailClick}>
-              {' '}
-              Info@lvw.live
-            </span>.
+        {user ? (
+          <p>
+            Be among the first to experience the future of live virtual
+            exploration. Sign up for early access to LVW and start your journey
+            of boundless exploration.
           </p>
-        }
+        ) : (
+          <p>
+            Join our passionate team and shape the future of live virtual
+            exploration. We value diverse perspectives and are always looking
+            for talented individuals to join our innovative journey. Fill out
+            the form below or send us your CV at
+            <span
+              style={{
+                textDecoration: "underline",
+                cursor: "pointer",
+                color: "blue",
+                fontWeight: 800,
+              }}
+              onClick={handleEmailClick}
+            >
+              {" "}
+              Info@lvw.live
+            </span>
+            .
+          </p>
+        )}
         <h4>Required *</h4>
         <form style={{ marginTop: "60px" }}>
           <Grid container spacing={2}>
@@ -95,7 +123,13 @@ function Modall({ open, handleClose, user, show }) {
               <>
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
                   <label>Role</label>
-                  <Box sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}>
+                  <Box
+                    sx={{
+                      backgroundColor: "#021022",
+                      width: "95%",
+                      borderRadius: "10px",
+                    }}
+                  >
                     <FormControl fullWidth>
                       <Select
                         labelId="demo-simple-select-label"
@@ -122,7 +156,11 @@ function Modall({ open, handleClose, user, show }) {
               <label>First Name</label>
               <TextField
                 onChange={(e) => setFirstName(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
+                sx={{
+                  backgroundColor: "#021022",
+                  width: "95%",
+                  borderRadius: "10px",
+                }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
@@ -132,7 +170,11 @@ function Modall({ open, handleClose, user, show }) {
               <label>Last Name</label>
               <TextField
                 onChange={(e) => setLastName(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
+                sx={{
+                  backgroundColor: "#021022",
+                  width: "95%",
+                  borderRadius: "10px",
+                }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
@@ -142,7 +184,11 @@ function Modall({ open, handleClose, user, show }) {
               <label>Email</label>
               <TextField
                 onChange={(e) => setEmail(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
+                sx={{
+                  backgroundColor: "#021022",
+                  width: "95%",
+                  borderRadius: "10px",
+                }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
@@ -152,15 +198,43 @@ function Modall({ open, handleClose, user, show }) {
               <label>Phone</label>
               <TextField
                 onChange={(e) => setPhone(e.target.value)}
-                sx={{ backgroundColor: "#021022", width: "95%", borderRadius: "10px" }}
+                sx={{
+                  backgroundColor: "#021022",
+                  width: "95%",
+                  borderRadius: "10px",
+                }}
                 id="outlined-basic"
                 variant="outlined"
                 InputProps={{ style: { color: "white" } }}
               />
             </Grid>
-            <Button
-              style={{ borderRadius: "10px" }}
-              onClick={submit}>submit</Button>
+            {user && 
+              <>
+                <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
+                  <label>Birth Date</label>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["DateTimePicker"]}>
+                      <DateTimePicker
+                      onChange={(e)=>{
+                        setBirthDate(e.$d)
+                      }}
+                        views={["year", "month", "day"]}
+                        sx={{
+                          backgroundColor: "#021022",
+                          width: "95%",
+                          borderRadius: "10px",
+                        }}
+                        InputProps={{ style: { color: "white" } }}
+                      />
+                    </DemoContainer>
+                  </LocalizationProvider>
+                </Grid>
+                <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}></Grid>
+              </>
+            }
+            <Button style={{ borderRadius: "10px" }} onClick={submit}>
+              submit
+            </Button>
           </Grid>
         </form>
       </Box>
