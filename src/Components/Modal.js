@@ -205,7 +205,6 @@ function Modall({ open, handleClose, user, show }) {
                 }}
                 id="outlined-basic"
                 variant="outlined"
-                InputProps={{ style: { color: "white" } }}
               />
             </Grid>
             {user && 
