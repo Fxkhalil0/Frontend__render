@@ -49,7 +49,8 @@ function Modall({ open, handleClose, user, show }) {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      phone: phone
+      phone: phone,
+      birthDate: birthDate
     };
     console.log(values)
     await axios
@@ -80,13 +81,14 @@ function Modall({ open, handleClose, user, show }) {
         setLastName("");
         setPhone("");
         setRole(0);
+        setBirthDate("")
       }}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
         <div className="top">
-          <h3>{user ? "Try With Us" : "Join Our Team"}</h3>
+          <h3>{user ? "Try With Us" : "Join Us Now"}</h3>
           <Button onClick={handleClose}>Close</Button>
         </div>
         {user ? (
@@ -139,12 +141,12 @@ function Modall({ open, handleClose, user, show }) {
                         onChange={handleChange}
                       >
                         <MenuItem disabled value={0}>
-                          Role
+                          Careers
                         </MenuItem>
                         <MenuItem value={"cameraOperator"}>
-                          CameraOperator
+                          Camera Operator
                         </MenuItem>
-                        <MenuItem value={"tourGuide"}>TourGuide</MenuItem>
+                        <MenuItem value={"tourGuide"}>Tour Guide</MenuItem>
                       </Select>
                     </FormControl>
                   </Box>
