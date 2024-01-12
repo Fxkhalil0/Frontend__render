@@ -54,6 +54,9 @@ function Modall({ open, handleClose, user, show }) {
       show(err?.response?.data?.message, "error")
     })
   }
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:Info@lvw.live';
+  };
 
   return (
     <Modal
@@ -76,8 +79,14 @@ function Modall({ open, handleClose, user, show }) {
           <Button onClick={handleClose}>Close</Button>
         </div>
         {user ?
-          <p>By submitting this form, your will join our waitlist to get early
-            access to LIVE VIRTUAL WORLD</p> : <p>Lorem Lorem Lorem</p>
+          <p>Be among the first to experience the future of live virtual exploration. Sign up for early access to LVW and start your journey of boundless exploration.</p> 
+          : <p>Join our passionate team and shape the future of live virtual exploration. We value diverse perspectives and are always looking for talented individuals to join our innovative journey.
+            Fill out the form below or send us your CV at
+            <span style={{ textDecoration: 'underline', cursor: 'pointer', color: 'blue', fontWeight: 800 }} onClick={handleEmailClick}>
+              {' '}
+              Info@lvw.live
+            </span>.
+          </p>
         }
         <h4>Required *</h4>
         <form style={{ marginTop: "60px" }}>
