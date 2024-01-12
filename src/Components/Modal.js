@@ -124,7 +124,7 @@ function Modall({ open, handleClose, user, show }) {
             {!user && (
               <>
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-                  <label>Role</label>
+                  <label>Careers</label>
                   <Box
                     sx={{
                       backgroundColor: "#021022",
