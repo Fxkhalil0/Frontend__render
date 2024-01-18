@@ -43,7 +43,7 @@ function MainPage() {
               <div className="box__shadow">
                 <img src={Shadow} alt="" />
                 <h1>LVW</h1>
-              <p>Our website is coming soon! Sign up for early access to experience the future of live virtual exploration.</p>
+              <p>Our website is coming soon! Apply for early access to experience the future of live virtual exploration.</p>
               </div>
               <div className="responsive__div">
               <img src={Lines} alt="" />
