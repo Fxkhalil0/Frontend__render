@@ -679,6 +679,10 @@ footer>.footer__icons>i {
   .left__side p {
     margin-left: 20px;
   }
+
+  .responsive__div button {
+    margin-left: 12px;
+  }
 }
 
 @media screen and (max-width: 300px) {
@@ -742,6 +746,9 @@ footer>.footer__icons>i {
     margin-left: 9px;
     width: 100%;
   }
+  .responsive__div button {
+    margin-left: 40px;
+}
 }
 
 .css-1x5jdmq {
