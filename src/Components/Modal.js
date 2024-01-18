@@ -234,7 +234,7 @@ function Modall({ open, handleClose, user, show }) {
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}></Grid>
               </>
             }
-            <Button style={{ borderRadius: "10px" }} onClick={submit} type='submit'>
+            <Button style={{ borderRadius: "10px" }} onClick={submit}>
               Submit
             </Button>
           </Grid>
