@@ -31,23 +31,20 @@ const style = {
 };
 
 function Modall({ open, handleClose, user, show }) {
-  useEffect(() => { }, [open]);
+  useEffect(() => {}, [open]);
 
   const [role, setRole] = useState(0);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [birthDate, setBirthDate] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [birthDate , setBirthDate] = useState("")
 
   const handleChange = (event) => {
     setRole(event.target.value);
   };
-  const submit = async (e) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
+  const submit = async () => {
+    
     let values = {
       role: role ? role : "user",
       firstName: firstName,
@@ -56,20 +53,19 @@ function Modall({ open, handleClose, user, show }) {
       phone: phone,
       birthDate: birthDate
     };
-    setIsSubmitting(true);
-    try {
-      const res = await axios.post("https://backend-1rxt.onrender.com/addnew", values, {
+    console.log(values)
+    await axios
+      .post("https://backend-1rxt.onrender.com/addnew", values, {
         withCredentials: true,
+      })
+      .then((res) => {
+        handleClose();
+        show("Your request sent successfully", "success");
+      })
+      .catch((err) => {
+        console.log(err);
+        show(err?.response?.data?.message, "error");
       });
-
-      handleClose();
-      show("Your request sent successfully", "success");
-    } catch (err) {
-      console.log(err);
-      show(err?.response?.data?.message, "error");
-    } finally {
-      setIsSubmitting(false);
-    }
   };
   const handleEmailClick = () => {
     window.location.href = "mailto:Info@lvw.live";
@@ -214,16 +210,16 @@ function Modall({ open, handleClose, user, show }) {
                 variant="outlined"
               />
             </Grid>
-            {user &&
+            {user && 
               <>
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
                   <label>Birth Date *</label>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["DateTimePicker"]}>
                       <DateTimePicker
-                        onChange={(e) => {
-                          setBirthDate(e.$d)
-                        }}
+                      onChange={(e)=>{
+                        setBirthDate(e.$d)
+                      }}
                         views={["year", "month", "day"]}
                         sx={{
                           backgroundColor: "#021022",
@@ -238,7 +234,7 @@ function Modall({ open, handleClose, user, show }) {
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}></Grid>
               </>
             }
-            <Button style={{ borderRadius: "10px" }} type="submit" disabled={isSubmitting}>
+            <Button style={{ borderRadius: "10px" }} onClick={submit} type='submit'>
               Submit
             </Button>
           </Grid>
