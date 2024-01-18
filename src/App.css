@@ -236,14 +236,14 @@ footer>.footer__icons>i:nth-last-of-type(3) {
 
 .modal p {
   color: #81858a;
-  margin-top: 50px;
+  margin-top: 45px;
   font-size: 18px;
   line-height: 25px;
 }
 
 .modal h4 {
   color: #e8a137;
-  margin-top: 30px;
+  margin-top: 25px;
   text-transform: uppercase;
   position: relative;
 }
