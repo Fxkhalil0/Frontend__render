@@ -44,7 +44,7 @@ function Modall({ open, handleClose, user, show }) {
   const handleChange = (event) => {
     setRole(event.target.value);
   };
-  const submit = async () => {
+  const submit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
 
@@ -238,8 +238,8 @@ function Modall({ open, handleClose, user, show }) {
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}></Grid>
               </>
             }
-            <Button style={{ borderRadius: "10px" }} onClick={submit} type='submit'>
-              submit
+            <Button style={{ borderRadius: "10px" }} type="submit" disabled={isSubmitting}>
+              Submit
             </Button>
           </Grid>
         </form>
