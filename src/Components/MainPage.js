@@ -19,6 +19,9 @@ function MainPage() {
   function show(message,status){
     showToast(message, 2000, status);
   }
+  const navigateToProfile = (profileUrl) => {
+    window.open(profileUrl, "_blank"); // Open the profile URL in a new tab
+  };
   return (
     <>
     <ToastContainer />
@@ -74,10 +77,10 @@ function MainPage() {
         </div>
         <footer>
           <div className="footer__icons">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-youtube"></i>
-            <i class="fa-brands fa-linkedin-in"></i>
-            <i class="fa-regular fa-envelope"></i>
+          <i className="fa-brands fa-instagram" onClick={() => navigateToProfile("https://www.instagram.com/live_virtual_world?igsh=MzRlODBiNWFlZA==")}></i>
+            <i className="fa-brands fa-youtube" onClick={() => navigateToProfile("https://youtube.com/@livevirtualworld7827?si=EnL3pBzNfYYrxW8W")}></i>
+            <i className="fa-brands fa-linkedin-in" onClick={() => navigateToProfile("https://www.linkedin.com/company/live-virtual-world/")}></i>
+            <i className="fa-regular fa-envelope" onClick={() => window.location.href = "mailto:Info@lvw.live"}></i>
           </div>
         </footer>
       </div>

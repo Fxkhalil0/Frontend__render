@@ -183,7 +183,7 @@ function Modall({ open, handleClose, user, show }) {
               />
             </Grid>
             <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-              <label>Email</label>
+              <label>Email *</label>
               <TextField
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{

@@ -194,6 +194,18 @@ footer>.footer__icons>i {
   margin-right: 10px;
   cursor: pointer;
 }
+footer>.footer__icons>i:nth-last-of-type(3) {
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 12px 12px 9.5px;
+  width: 50px;
+  height: 50px;
+  background-color: #19171a;
+  border: 1px solid #671924;
+  border-radius: 13px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 .top {
   display: flex;
@@ -372,7 +384,15 @@ footer>.footer__icons>i {
 
   footer>.footer__icons>i {
     font-size: 15px;
-    padding: 8px;
+    padding: 8px 8px 8px 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    margin-right: 7px;
+  }
+  footer>.footer__icons>i:nth-last-of-type(3) {
+    font-size: 15px;
+    padding: 8px 8px 8px 5.5px;
     width: 30px;
     height: 30px;
     border-radius: 9px;
