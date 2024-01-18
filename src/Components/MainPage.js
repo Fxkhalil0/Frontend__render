@@ -74,10 +74,10 @@ function MainPage() {
         </div>
         <footer>
           <div className="footer__icons">
-            <i class="fa-brands fa-facebook-f"></i>
             <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-solid fa-earth-americas"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-regular fa-envelope"></i>
           </div>
         </footer>
       </div>

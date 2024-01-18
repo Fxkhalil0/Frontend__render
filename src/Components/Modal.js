@@ -44,7 +44,6 @@ function Modall({ open, handleClose, user, show }) {
     setRole(event.target.value);
   };
   const submit = async () => {
-    
     let values = {
       role: role ? role : "user",
       firstName: firstName,
@@ -125,7 +124,7 @@ function Modall({ open, handleClose, user, show }) {
             {!user && (
               <>
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-                  <label>Careers *</label>
+                  <label>Careers</label>
                   <Box
                     sx={{
                       backgroundColor: "#021022",
@@ -156,7 +155,7 @@ function Modall({ open, handleClose, user, show }) {
               </>
             )}
             <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-              <label>First Name *</label>
+              <label>First Name</label>
               <TextField
                 onChange={(e) => setFirstName(e.target.value)}
                 sx={{
@@ -170,7 +169,7 @@ function Modall({ open, handleClose, user, show }) {
               />
             </Grid>
             <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-              <label>Last Name *</label>
+              <label>Last Name</label>
               <TextField
                 onChange={(e) => setLastName(e.target.value)}
                 sx={{
@@ -184,7 +183,7 @@ function Modall({ open, handleClose, user, show }) {
               />
             </Grid>
             <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-              <label>Email *</label>
+              <label>Email</label>
               <TextField
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{
@@ -213,7 +212,7 @@ function Modall({ open, handleClose, user, show }) {
             {user && 
               <>
                 <Grid xs={12} md={6} sx={{ marginBottom: "20px" }}>
-                  <label>Birth Date *</label>
+                  <label>Birth Date</label>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["DateTimePicker"]}>
                       <DateTimePicker
@@ -235,7 +234,7 @@ function Modall({ open, handleClose, user, show }) {
               </>
             }
             <Button style={{ borderRadius: "10px" }} onClick={submit}>
-              Submit
+              submit
             </Button>
           </Grid>
         </form>
