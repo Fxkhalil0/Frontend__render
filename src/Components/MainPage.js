@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/RedLogo.png";
 import Lines from "../assets/f2.png";
 import Global from "../assets/Rectangle 403.png";
 import path1 from "../assets/New Project (222).png";
 import path2 from "../assets/New Project (444).png";
 import path3 from "../assets/New Project (111).png";
+import h1 from '../assets/Live-Virtual-World-Red.png'
 import Shadow from "../assets/Ellipse 3.png";
 import Modall from "./Modal";
 import { ToastContainer } from "react-toastify";
@@ -44,8 +45,9 @@ function MainPage() {
           <div className="page__body">
             <div className="left__side">
               <div className="box__shadow">
-                <img src={Shadow} alt="" />
-                <h1>LVW</h1>
+                {/* <img className="shadow" src={Shadow} alt="" /> */}
+                {/* <h1>LVW</h1> */}
+                <img className="h1" src={h1} alt="" />
               <p>Our website is coming soon! Apply for early access to experience the future of live virtual exploration.</p>
               </div>
               <div className="responsive__div">

@@ -94,15 +94,18 @@ nav::after {
   border-radius: 50%;
   border: 1px solid #ffffff5f;
 }
+.left__side .h1{
+  width: 80%;
+}
 
 .box__shadow {
   width: 50%;
 }
 
-.box__shadow>img {
+.box__shadow .shadow {
   width: 35%;
   position: absolute;
-  top: 145px;
+  top: 85px;
   left: 0;
 }
 
@@ -352,6 +355,9 @@ footer>.footer__icons>i:nth-last-of-type(3) {
 
   .right__side .paths {
     top: 70px;
+  }
+  .left__side .h1{
+    margin-top: 20px;
   }
 }
 
