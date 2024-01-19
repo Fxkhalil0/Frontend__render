@@ -509,6 +509,10 @@ footer>.footer__icons>i:nth-last-of-type(3) {
     text-align: center;
   }
 
+  .left__side .h1 {
+    margin-left: 9px;
+  }
+
   .responsive__div button {
     padding: 9px 8px;
   }
@@ -615,6 +619,21 @@ footer>.footer__icons>i:nth-last-of-type(3) {
     width: 155%;
     margin-left: -18px;
   }
+
+  .left__side .h1 {
+    margin-left: 22px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .left__side .h1 {
+    margin-left: 22px;
+  }
+
+  .responsive__div button {
+    font-size: 13px;
+    margin-left: 26px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -680,6 +699,10 @@ footer>.footer__icons>i:nth-last-of-type(3) {
   .left__side p {
     width: 90%;
     margin-left: 22px;
+  }
+
+  .left__side .h1 {
+    margin-left: 11px;
   }
 }
 
