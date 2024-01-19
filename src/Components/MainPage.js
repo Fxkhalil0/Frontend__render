@@ -48,7 +48,7 @@ function MainPage() {
                 {/* <img className="shadow" src={Shadow} alt="" /> */}
                 {/* <h1>LVW</h1> */}
                 <img className="h1" src={h1} alt="" />
-              <p>Our website is coming soon! Apply for early access to experience the future of live virtual exploration.</p>
+              <p>Our website is coming soon! Sign up to get early access and stay up to date! We promise we won’t share your email with others.</p>
               </div>
               <div className="responsive__div">
               <img src={Lines} alt="" />
