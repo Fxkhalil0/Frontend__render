@@ -26,12 +26,14 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
+  padding: 12px 0;
   position: relative;
 }
 
 nav>figure>img {
   width: 90px;
+  height: auto;
+  object-fit: contain;
 }
 
 nav>button {
@@ -94,8 +96,12 @@ nav::after {
   border-radius: 50%;
   border: 1px solid #ffffff5f;
 }
-.left__side .h1{
-  width: 80%;
+
+.left__side .h1 {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-left: -12px;
 }
 
 .box__shadow {
@@ -112,7 +118,7 @@ nav::after {
 .left__side p {
   color: white;
   font-size: 18px;
-  margin-top: 30px;
+  margin-top: 15px;
   text-align: center;
   margin-left: -60px;
   line-height: 25px;
@@ -197,6 +203,7 @@ footer>.footer__icons>i {
   margin-right: 10px;
   cursor: pointer;
 }
+
 footer>.footer__icons>i:nth-last-of-type(3) {
   color: #fff;
   font-size: 25px;
@@ -356,7 +363,8 @@ footer>.footer__icons>i:nth-last-of-type(3) {
   .right__side .paths {
     top: 70px;
   }
-  .left__side .h1{
+
+  .left__side .h1 {
     margin-top: 20px;
   }
 }
@@ -396,6 +404,7 @@ footer>.footer__icons>i:nth-last-of-type(3) {
     border-radius: 9px;
     margin-right: 7px;
   }
+
   footer>.footer__icons>i:nth-last-of-type(3) {
     font-size: 15px;
     padding: 8px 8px 8px 5.5px;
@@ -772,9 +781,10 @@ footer>.footer__icons>i:nth-last-of-type(3) {
     margin-left: 9px;
     width: 100%;
   }
+
   .responsive__div button {
     margin-left: 40px;
-}
+  }
 }
 
 .css-1x5jdmq {
