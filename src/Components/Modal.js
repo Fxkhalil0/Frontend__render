@@ -144,7 +144,7 @@ function Modall({ open, handleClose, user, show }) {
                           Careers
                         </MenuItem>
                         <MenuItem value={"cameraOperator"}>
-                          Virsual Camera Operator
+                          Virtual Camera Operator
                         </MenuItem>
                         <MenuItem value={"tourGuide"}>Virtual Tour Guide</MenuItem>
                       </Select>
